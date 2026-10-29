@@ -1,0 +1,104 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model NguoiDung {
+  id        Int        @id @default(autoincrement())
+  name      String     @db.VarChar(255)
+  email     String     @unique @db.VarChar(255)
+  password  String     @map("pass_word") @db.VarChar(255)
+  phone     String?    @db.VarChar(20)
+  birthday  String?    @map("birth_day") @db.VarChar(20)
+  gender    Boolean?
+  role      String     @default("USER") @db.VarChar(20)
+  avatar    String?    @db.VarChar(255)
+  datPhong  DatPhong[]
+  binhLuan  BinhLuan[]
+  createdAt DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime   @updatedAt @map("updated_at")
+
+  @@map("NguoiDung")
+}
+
+model ViTri {
+  id        Int      @id @default(autoincrement())
+  tenViTri  String   @map("ten_vi_tri") @db.VarChar(255)
+  tinhThanh String   @map("tinh_thanh") @db.VarChar(255)
+  quocGia   String   @map("quoc_gia") @db.VarChar(255)
+  hinhAnh   String?  @map("hinh_anh") @db.VarChar(255)
+  phong     Phong[]
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("ViTri")
+}
+
+model Phong {
+  id        Int        @id @default(autoincrement())
+  tenPhong  String     @map("ten_phong") @db.VarChar(255)
+  khach     Int        @default(1)
+  phongNgu  Int        @default(1) @map("phong_ngu")
+  giuong    Int        @default(1)
+  phongTam  Int        @default(1) @map("phong_tam")
+  moTa      String?    @map("mo_ta") @db.Text
+  giaTien   Int        @map("gia_tien")
+  mayGiat   Boolean    @default(false) @map("may_giat")
+  banLa     Boolean    @default(false) @map("ban_la")
+  tivi      Boolean    @default(false)
+  dieuHoa   Boolean    @default(false) @map("dieu_hoa")
+  wifi      Boolean    @default(false)
+  bep       Boolean    @default(false)
+  doXe      Boolean    @default(false) @map("do_xe")
+  hoBoi     Boolean    @default(false) @map("ho_boi")
+  banUi     Boolean    @default(false) @map("ban_ui")
+  hinhAnh   String?    @map("hinh_anh") @db.VarChar(255)
+  maViTri   Int?       @map("ma_vi_tri")
+  viTri     ViTri?     @relation(fields: [maViTri], references: [id], onDelete: SetNull)
+  datPhong  DatPhong[]
+  binhLuan  BinhLuan[]
+  createdAt DateTime   @default(now()) @map("created_at")
+  updatedAt DateTime   @updatedAt @map("updated_at")
+
+  @@index([maViTri])
+  @@map("Phong")
+}
+
+model DatPhong {
+  id           Int       @id @default(autoincrement())
+  maPhong      Int       @map("ma_phong")
+  ngayDen      DateTime  @map("ngay_den")
+  ngayDi       DateTime  @map("ngay_di")
+  soLuongKhach Int       @map("so_luong_khach")
+  maNguoiDung  Int       @map("ma_nguoi_dat")
+  phong        Phong     @relation(fields: [maPhong], references: [id], onDelete: Cascade)
+  nguoiDung    NguoiDung @relation(fields: [maNguoiDung], references: [id], onDelete: Cascade)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  @@index([maPhong])
+  @@index([maNguoiDung])
+  @@map("DatPhong")
+}
+
+model BinhLuan {
+  id              Int       @id @default(autoincrement())
+  maPhong         Int       @map("ma_phong")
+  maNguoiBinhLuan Int       @map("ma_nguoi_binh_luan")
+  ngayBinhLuan    DateTime  @default(now()) @map("ngay_binh_luan")
+  noiDung         String    @map("noi_dung") @db.Text
+  saoBinhLuan     Int       @default(5) @map("sao_binh_luan")
+  phong           Phong     @relation(fields: [maPhong], references: [id], onDelete: Cascade)
+  nguoiDung       NguoiDung @relation(fields: [maNguoiBinhLuan], references: [id], onDelete: Cascade)
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt @map("updated_at")
+
+  @@index([maPhong])
+  @@index([maNguoiBinhLuan])
+  @@map("BinhLuan")
+}
+

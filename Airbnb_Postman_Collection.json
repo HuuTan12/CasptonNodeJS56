@@ -1,0 +1,1033 @@
+{
+  "info": {
+    "name": "Airbnb API - CyberSoft Capstone NodeJS 56",
+    "description": "Bộ sưu tập đầy đủ 36 API chuẩn CyberSoft Airbnb, tích hợp sẵn biến {{baseUrl}} và {{token}}",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:3069/api",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "DangKy",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signup",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signup"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "DangNhap",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/auth/signin",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "auth",
+                "signin"
+              ]
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "BinhLuan",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/binh-luan",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "binh-luan"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/binh-luan",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "binh-luan"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Put",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/binh-luan/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "binh-luan",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/binh-luan/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "binh-luan",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetBinhLuanTheoCongViec",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/binh-luan/lay-binh-luan-theo-phong/:MaPhong",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "binh-luan",
+                "lay-binh-luan-theo-phong",
+                ":MaPhong"
+              ]
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "DatPhong",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dat-phong",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dat-phong"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/dat-phong",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dat-phong"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dat-phong/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dat-phong",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Put",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/dat-phong/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dat-phong",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dat-phong/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dat-phong",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetDatPhongTheoUser",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dat-phong/lay-theo-nguoi-dung/:MaNguoiDung",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dat-phong",
+                "lay-theo-nguoi-dung",
+                ":MaNguoiDung"
+              ]
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "NguoiDung",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetPaging",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/phan-trang-tim-kiem",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "phan-trang-tim-kiem"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Put",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetByName",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users/search/:TenNguoiDung",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "search",
+                ":TenNguoiDung"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "UploadAvatar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "formFile",
+                  "type": "file",
+                  "description": "Chọn file ảnh"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users/upload-avatar",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users",
+                "upload-avatar"
+              ]
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "Phong",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetTheoViTri",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue/lay-phong-theo-vi-tri",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue",
+                "lay-phong-theo-vi-tri"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetPaging",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue/phan-trang-tim-kiem",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue",
+                "phan-trang-tim-kiem"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Put",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "UploadAnhPhong",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "formFile",
+                  "type": "file",
+                  "description": "Chọn file ảnh"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/phong-thue/upload-hinh-phong",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "phong-thue",
+                "upload-hinh-phong"
+              ]
+            },
+            "description": ""
+          }
+        }
+      ]
+    },
+    {
+      "name": "ViTri",
+      "item": [
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "GetPaging",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri/phan-trang-tim-kiem",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri",
+                "phan-trang-tim-kiem"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Get",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Put",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"example\": \"data\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri",
+                ":id"
+              ]
+            },
+            "description": ""
+          }
+        },
+        {
+          "name": "UploadAnhViTri",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "token",
+                "value": "{{token}}",
+                "description": "JWT Token đăng nhập"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "formFile",
+                  "type": "file",
+                  "description": "Chọn file ảnh"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{baseUrl}}/vi-tri/upload-hinh-vitri",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "vi-tri",
+                "upload-hinh-vitri"
+              ]
+            },
+            "description": ""
+          }
+        }
+      ]
+    }
+  ]
+}
